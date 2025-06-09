@@ -69,4 +69,13 @@ public class Locates {
 
     @FindBy(xpath = "//a[.='Continue']")
     public WebElement deleteAccContinueButton;
+
+    @FindBy(xpath = "//h2[@class='title text-center']")
+    public WebElement featuresItemsText;
+
+    @FindBy(xpath = "//*[text()='Login to your account']")
+    public WebElement loginToYourAccText;
+
+    @FindBy(xpath = "//*[@type='email']")
+    public WebElement loginPageEmailArea;
 }

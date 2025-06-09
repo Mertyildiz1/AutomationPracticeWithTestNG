@@ -1,19 +1,14 @@
 package tests;
 
 import com.github.javafaker.Faker;
-import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import pages.Locates;
+import utilities.ConfigReader;
 import utilities.Driver;
 
-
-import java.time.Duration;
-
-public class C_01 {
+public class C01_RegisterUser {
     @Test
     public void test01() {
 
@@ -22,7 +17,7 @@ public class C_01 {
         Faker faker = new Faker();
 
         // Navigate to url 'http://automationexercise.com'
-        Driver.getDriver().get("http://automationexercise.com");
+        Driver.getDriver().get(ConfigReader.getProperty("url"));
 
         // Verify that home page is visible successfully
         String pageExpectedTitle = "Automation Exercise";
@@ -51,14 +46,14 @@ public class C_01 {
         //Fill details: Title, Name, Email, Password, Date of birth
         locates.mrsMrSelectRadioBox.click();
         locates.mrsMrSelectRadioBox.sendKeys(Keys.TAB,
-                                                         Keys.TAB,
-                                                         faker.internet().password(),
-                                                         Keys.TAB,
-                                                         String.valueOf(faker.random().nextInt(1, 30)),
-                                                         Keys.TAB,
-                                                         "July",
-                                                         Keys.TAB,
-                                                         String.valueOf(faker.random().nextInt(1950, 2015)));
+                Keys.TAB,
+                faker.internet().password(),
+                Keys.TAB,
+                String.valueOf(faker.random().nextInt(1, 30)),
+                Keys.TAB,
+                "July",
+                Keys.TAB,
+                String.valueOf(faker.random().nextInt(1950, 2015)));
 
         //Select checkbox 'Sign up for our newsletter!'
         locates.newsletterCheckBox.click();
@@ -66,21 +61,21 @@ public class C_01 {
 
         // Fill details: First name, Last name, Company, Address, Address2, Country, State, City, Zipcode, Mobile Number
         locates.registerPageFirstNameArea.sendKeys(faker.name().firstName(),
-                                                   Keys.TAB,
-                                                   faker.name().lastName(),
-                                                   Keys.TAB,
-                                                   faker.company().name(),
-                                                   Keys.TAB,
-                                                   faker.address().fullAddress(),
-                                                   Keys.TAB,
-                                                   Keys.TAB,
-                                                   faker.address().country(),
-                                                   Keys.TAB,
-                                                   faker.address().state(),
-                                                   Keys.TAB,
-                                                   faker.address().city(),
-                                                   Keys.TAB,
-                                                   faker.address().zipCode());
+                Keys.TAB,
+                faker.name().lastName(),
+                Keys.TAB,
+                faker.company().name(),
+                Keys.TAB,
+                faker.address().fullAddress(),
+                Keys.TAB,
+                Keys.TAB,
+                faker.address().country(),
+                Keys.TAB,
+                faker.address().state(),
+                Keys.TAB,
+                faker.address().city(),
+                Keys.TAB,
+                faker.address().zipCode());
 
         locates.registerPhoneNumberArea.sendKeys(faker.phoneNumber().phoneNumber());
 
