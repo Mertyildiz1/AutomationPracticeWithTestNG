@@ -86,11 +86,33 @@ public class Locates {
     public WebElement logoutButton;
 
     @FindBy(xpath = "//*[text()=' Home']")
-    public WebElement homeButton;
+    public WebElement homePageHomeButton;
 
     @FindBy(xpath = "//*[text()='New User Signup!']")
     public WebElement newUserSignUpText;
 
     @FindBy(xpath = "//*[.='Email Address already exist!']")
     public WebElement alreadyExistText;
+
+    @FindBy(xpath = "//i[@class='fa fa-envelope']")
+    public WebElement contactUsButton;
+
+    @FindBy(xpath = "//*[.='Get In Touch']")
+    public WebElement getInTouchText;
+
+    @FindBy(css = ".form-control")
+    public WebElement contactUsNameInputArea;
+
+    @FindBy(xpath = "(//input[@class='form-control'])[4]")
+    public WebElement contactUsFileUpload;
+
+    @FindBy(xpath = "//input[@class='btn btn-primary pull-left submit_form']")
+    public WebElement contactUsSubmitButton;
+
+    @FindBy(xpath = "//div[@class='status alert alert-success']")
+    public WebElement contactUsSuccessMessage;
+
+    @FindBy(xpath = "//i[@class='fa fa-angle-double-left']")
+    public WebElement contactUsHomeButton;
+
 }
