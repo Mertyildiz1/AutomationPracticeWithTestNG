@@ -78,4 +78,7 @@ public class Locates {
 
     @FindBy(xpath = "//*[@type='email']")
     public WebElement loginPageEmailArea;
+
+    @FindBy(xpath = "//*[text()='Your email or password is incorrect!']")
+    public WebElement loginErrorText;
 }
