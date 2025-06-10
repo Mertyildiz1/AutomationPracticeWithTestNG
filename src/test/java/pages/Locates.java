@@ -81,4 +81,16 @@ public class Locates {
 
     @FindBy(xpath = "//*[text()='Your email or password is incorrect!']")
     public WebElement loginErrorText;
+
+    @FindBy(xpath = "//*[@class='fa fa-lock']")
+    public WebElement logoutButton;
+
+    @FindBy(xpath = "//*[text()=' Home']")
+    public WebElement homeButton;
+
+    @FindBy(xpath = "//*[text()='New User Signup!']")
+    public WebElement newUserSignUpText;
+
+    @FindBy(xpath = "//*[.='Email Address already exist!']")
+    public WebElement alreadyExistText;
 }

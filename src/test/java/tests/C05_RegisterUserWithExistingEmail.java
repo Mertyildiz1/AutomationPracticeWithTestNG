@@ -1,6 +1,5 @@
 package tests;
 
-import com.github.javafaker.Faker;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -14,19 +13,18 @@ import utilities.Driver;
 
 import java.time.Duration;
 
-public class C03_LoginWithIncorrectEmailAndPassword {
+public class C05_RegisterUserWithExistingEmail {
     @Test
-    public void LoginWithCorrectEmailAndPassword() {
+    public void test05() {
 
         SoftAssert softAssert = new SoftAssert();
         Locates locates = new Locates();
-        Faker faker = new Faker();
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(15));
 
-        // Navigate to url
+        // Navigate to url 'http://automationexercise.com'
         Driver.getDriver().get(ConfigReader.getProperty("url"));
 
-        //Verify that home page is visible successfully
+        // Verify that home page is visible successfully
         wait.until(ExpectedConditions.visibilityOf(locates.featuresItemsText));
         softAssert.assertTrue(locates.featuresItemsText.isDisplayed());
 
@@ -37,21 +35,22 @@ public class C03_LoginWithIncorrectEmailAndPassword {
         // Click on 'Signup / Login' button
         locates.homePageSignUpLoginButton.click();
 
-        //Verify 'Login to your account' is visible
-        wait.until(ExpectedConditions.visibilityOf(locates.loginToYourAccText));
-        softAssert.assertTrue(locates.loginToYourAccText.isDisplayed());
+        // Verify 'New User Signup!' is visible
+        String expectedText = "New User Signup!";
+        String actualText = locates.newUserSignUpText.getText();
+        softAssert.assertEquals(expectedText, actualText);
 
-        //Enter incorrect email address and password
-        locates.loginPageEmailArea.sendKeys(faker.internet().emailAddress(),
-                                            Keys.TAB,
-                                            faker.internet().password(),
-                                            Keys.TAB, Keys.ENTER);
+        // Enter name and already registered email address
+        locates.SignUpPageNameArea.sendKeys(ConfigReader.getProperty("name"),
+                                                        Keys.TAB,
+                                                        ConfigReader.getProperty("mail"),
+                                                        Keys.TAB,
+                                                        Keys.ENTER);
 
-        //Verify error 'Your email or password is incorrect!' is visible
-        String expectedErrorText = "Your email or password is incorrect!";
-
-        softAssert.assertTrue(locates.loginErrorText.isDisplayed());
-        softAssert.assertEquals(expectedErrorText, locates.loginErrorText.getText());
+        // Verify error 'Email Address already exist!' is visible
+        String expectedExistText = "Email Address already exist!";
+        softAssert.assertTrue(locates.alreadyExistText.isDisplayed());
+        softAssert.assertEquals(expectedExistText, locates.alreadyExistText.getText());
 
         softAssert.assertAll();
     }

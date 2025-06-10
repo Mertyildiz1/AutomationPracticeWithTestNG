@@ -13,19 +13,18 @@ import utilities.Driver;
 
 import java.time.Duration;
 
-public class C02_LoginWithCorrectEmailAndPassword {
+public class C04_LogoutUser {
     @Test
-    public void test02() {
+    public void test04() {
 
-        SoftAssert softAssert = new SoftAssert();
         Locates locates = new Locates();
+        SoftAssert softAssert = new SoftAssert();
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(15));
 
         // Navigate to url 'http://automationexercise.com'
-
         Driver.getDriver().get(ConfigReader.getProperty("url"));
 
         //Verify that home page is visible successfully
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(15));
         wait.until(ExpectedConditions.visibilityOf(locates.featuresItemsText));
         softAssert.assertTrue(locates.featuresItemsText.isDisplayed());
 
@@ -42,21 +41,23 @@ public class C02_LoginWithCorrectEmailAndPassword {
 
         //Enter correct email address and password
         locates.loginPageEmailArea.sendKeys(ConfigReader.getProperty("mail"),
-                                                         Keys.TAB,
-                                                         ConfigReader.getProperty("password"),
-                                                         Keys.TAB,
-                                                         Keys.ENTER);
+                                                        Keys.TAB,
+                                                        ConfigReader.getProperty("password"),
+                                                        Keys.TAB,
+                                                        Keys.ENTER);
 
         //Verify that 'Logged in as username' is visible
         wait.until(ExpectedConditions.visibilityOf(locates.loggedInAsUser));
         softAssert.assertTrue(locates.loggedInAsUser.isDisplayed());
 
-        //Click 'Delete Account' button
-        locates.homePageDeleteAccButton.click();
+        //Click 'Logout' button
+        locates.logoutButton.click();
 
-        // Verify that 'ACCOUNT DELETED!' is visible and click 'Continue' button
-        softAssert.assertTrue(locates.accDeletedText.isDisplayed());
-        locates.deleteAccContinueButton.click();
+        //Verify that user is navigated to login page
+        softAssert.assertTrue(locates.loginToYourAccText.isDisplayed());
+
+        String expectedLoginPageTitle = "Automation Exercise - Signup / Login";
+        softAssert.assertEquals(expectedLoginPageTitle, Driver.getDriver().getTitle());
 
         softAssert.assertAll();
     }
