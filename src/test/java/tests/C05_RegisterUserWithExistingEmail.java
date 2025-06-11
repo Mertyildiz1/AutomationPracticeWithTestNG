@@ -41,11 +41,12 @@ public class C05_RegisterUserWithExistingEmail {
         softAssert.assertEquals(expectedText, actualText);
 
         // Enter name and already registered email address
-        locates.SignUpPageNameArea.sendKeys(ConfigReader.getProperty("name"),
-                                                        Keys.TAB,
-                                                        ConfigReader.getProperty("mail"),
-                                                        Keys.TAB,
-                                                        Keys.ENTER);
+        locates.SignUpPageNameArea.sendKeys(
+                ConfigReader.getProperty("name"),
+                Keys.TAB,
+                ConfigReader.getProperty("mail"),
+                Keys.TAB,
+                Keys.ENTER);
 
         // Verify error 'Email Address already exist!' is visible
         String expectedExistText = "Email Address already exist!";

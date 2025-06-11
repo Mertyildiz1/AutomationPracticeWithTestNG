@@ -60,7 +60,8 @@ public class C01_RegisterUser {
         locates.newsletterCheckBox.sendKeys(Keys.TAB, Keys.SPACE);
 
         // Fill details: First name, Last name, Company, Address, Address2, Country, State, City, Zipcode, Mobile Number
-        locates.registerPageFirstNameArea.sendKeys(faker.name().firstName(),
+        locates.registerPageFirstNameArea.sendKeys(
+                faker.name().firstName(),
                 Keys.TAB,
                 faker.name().lastName(),
                 Keys.TAB,

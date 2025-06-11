@@ -115,4 +115,14 @@ public class Locates {
     @FindBy(xpath = "//i[@class='fa fa-angle-double-left']")
     public WebElement contactUsHomeButton;
 
+    @FindBy(xpath = "//b[text()='Test Cases']")
+    public WebElement testCasePageTestCaseText;
+
+
+
+
+
+
+
+
 }

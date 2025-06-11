@@ -41,11 +41,12 @@ public class C02_LoginWithCorrectEmailAndPassword {
         softAssert.assertTrue(locates.loginToYourAccText.isDisplayed());
 
         //Enter correct email address and password
-        locates.loginPageEmailArea.sendKeys(ConfigReader.getProperty("mail"),
-                                                         Keys.TAB,
-                                                         ConfigReader.getProperty("password"),
-                                                         Keys.TAB,
-                                                         Keys.ENTER);
+        locates.loginPageEmailArea.sendKeys(
+                ConfigReader.getProperty("mail"),
+                Keys.TAB,
+                ConfigReader.getProperty("password"),
+                Keys.TAB,
+                Keys.ENTER);
 
         //Verify that 'Logged in as username' is visible
         wait.until(ExpectedConditions.visibilityOf(locates.loggedInAsUser));

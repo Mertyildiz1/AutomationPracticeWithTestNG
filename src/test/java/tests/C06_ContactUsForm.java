@@ -48,13 +48,14 @@ public class C06_ContactUsForm {
         // Enter name, email, subject and message
         String subject = faker.lorem().sentence(4);
         String message = faker.lorem().sentence(15);
-        locates.contactUsNameInputArea.sendKeys(faker.name().firstName(),
-                                                Keys.TAB,
-                                                faker.internet().emailAddress(),
-                                                Keys.TAB,
-                                                subject,
-                                                Keys.TAB,
-                                                message);
+        locates.contactUsNameInputArea.sendKeys(
+                faker.name().firstName(),
+                Keys.TAB,
+                faker.internet().emailAddress(),
+                Keys.TAB,
+                subject,
+                Keys.TAB,
+                message);
 
         // Upload file
         String everyoneOwnPath = System.getProperty("user.home");

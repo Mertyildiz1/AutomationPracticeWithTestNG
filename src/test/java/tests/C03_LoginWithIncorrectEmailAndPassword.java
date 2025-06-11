@@ -42,10 +42,11 @@ public class C03_LoginWithIncorrectEmailAndPassword {
         softAssert.assertTrue(locates.loginToYourAccText.isDisplayed());
 
         //Enter incorrect email address and password
-        locates.loginPageEmailArea.sendKeys(faker.internet().emailAddress(),
-                                            Keys.TAB,
-                                            faker.internet().password(),
-                                            Keys.TAB, Keys.ENTER);
+        locates.loginPageEmailArea.sendKeys(
+                faker.internet().emailAddress(),
+                Keys.TAB,
+                faker.internet().password(),
+                Keys.TAB, Keys.ENTER);
 
         //Verify error 'Your email or password is incorrect!' is visible
         String expectedErrorText = "Your email or password is incorrect!";
