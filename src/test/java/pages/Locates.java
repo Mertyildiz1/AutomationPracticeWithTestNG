@@ -150,4 +150,16 @@ public class Locates {
 
     @FindBy(xpath = "//*[.='Brand:']")
     public WebElement productDetailsBrandName;
+
+    @FindBy(id = "submit_search")
+    public WebElement productSearchButton;
+
+    @FindBy(xpath = "//h2[@class='title text-center']")
+    public WebElement searchedProductText;
+
+    @FindBy(xpath = "(//p)[3]")
+    public WebElement searchedProductProductName;
+
+    @FindBy(xpath = "(//span[@class='pull-right'])[8]")
+    public WebElement brandBıba;
 }
