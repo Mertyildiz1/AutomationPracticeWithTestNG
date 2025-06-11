@@ -118,11 +118,36 @@ public class Locates {
     @FindBy(xpath = "//b[text()='Test Cases']")
     public WebElement testCasePageTestCaseText;
 
+    @FindBy(css = ".material-icons.card_travel")
+    public WebElement homePageProductsButton;
 
+    @FindBy(xpath = "//input[@id='search_product']")
+    public WebElement productsSearchArea;
 
+    @FindBy(xpath = "//*[.='All Products']")
+    public WebElement productsPageAllProductsText;
 
+    @FindBy(xpath = "(//i[@class='fa fa-plus-square'])[1]")
+    public WebElement firstProductsViewProductButton;
 
+    @FindBy(xpath = "//*[.='Quantity:']")
+    public WebElement productDetailsQuantity;
 
+    @FindBy(xpath = "//*[.='Blue Top']")
+    public WebElement productDetailsProductName;
 
+    @FindBy(xpath = "//*[.='Category: Women > Tops']")
+    public WebElement productDetailsCategoryName;
 
+    @FindBy(xpath = "//*[.='Rs. 500']")
+    public WebElement productDetailsPrice;
+
+    @FindBy(xpath = "//*[.='Availability:']")
+    public WebElement productDetailsAvailability;
+
+    @FindBy(xpath = "//*[.='Condition:']")
+    public WebElement productDetailsCondition;
+
+    @FindBy(xpath = "//*[.='Brand:']")
+    public WebElement productDetailsBrandName;
 }
