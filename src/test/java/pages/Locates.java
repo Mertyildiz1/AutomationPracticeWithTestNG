@@ -174,4 +174,7 @@ public class Locates {
 
     @FindBy(xpath = "//div[@class='alert-success alert']")
     public WebElement subscriptionVerifyAlert;
+
+    @FindBy(xpath = "//*[.=' Cart']")
+    public WebElement homePageCartButton;
 }
