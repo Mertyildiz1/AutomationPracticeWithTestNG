@@ -1,6 +1,7 @@
 package tests;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -17,6 +18,7 @@ public class C09_SearchProduct {
     @Test
     public void test09() {
 
+        Actions actions = new Actions(Driver.getDriver());
         Locates locates = new Locates();
         SoftAssert softAssert = new SoftAssert();
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(15));
@@ -52,6 +54,7 @@ public class C09_SearchProduct {
         softAssert.assertEquals(expectedText, locates.searchedProductText.getText());
 
         //Verify all the products related to search are visible
+        actions.scrollToElement(locates.brandBıba).perform();
         softAssert.assertTrue(locates.searchedProductProductName.isDisplayed());
         softAssert.assertEquals(ConfigReader.getProperty("searchedProduct"), locates.searchedProductProductName.getText());
 

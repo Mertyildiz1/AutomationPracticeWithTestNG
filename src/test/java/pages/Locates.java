@@ -162,4 +162,16 @@ public class Locates {
 
     @FindBy(xpath = "(//span[@class='pull-right'])[8]")
     public WebElement brandBıba;
+
+    @FindBy(xpath = "//*[.='Subscription']")
+    public WebElement subscriptionText;
+
+    @FindBy(id = "susbscribe_email")
+    public WebElement subscriptionEmailInput;
+
+    @FindBy(id = "subscribe")
+    public WebElement subscriptionArrowButton;
+
+    @FindBy(xpath = "//div[@class='alert-success alert']")
+    public WebElement subscriptionVerifyAlert;
 }
