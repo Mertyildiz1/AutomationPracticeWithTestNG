@@ -37,4 +37,4 @@ build/
 ### Mac OS ###
 .DS_Store
 pom.xml
-.idea
+.idea/

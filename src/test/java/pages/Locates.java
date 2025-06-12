@@ -10,6 +10,8 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import utilities.Driver;
 
+import java.util.List;
+
 public class Locates {
 
     protected WebDriver driver;
@@ -177,4 +179,43 @@ public class Locates {
 
     @FindBy(xpath = "//*[.=' Cart']")
     public WebElement homePageCartButton;
+
+    @FindBy(xpath = "//*[text()='Rs. 500']")
+    public WebElement firstProductMove;
+
+    @FindBy(xpath = "(//a[@class='btn btn-default add-to-cart'])[1]")
+    public WebElement firstProductAddToCartButton;
+
+    @FindBy(xpath = "//button[@class='btn btn-success close-modal btn-block']")
+    public WebElement continueShoppingButton;
+
+    @FindBy(xpath = "//*[text()='Rs. 400']")
+    public WebElement secondProductMove;
+
+    @FindBy(xpath = "(//a[@class='btn btn-default add-to-cart'])[3]")
+    public WebElement secondProductAddToCartButton;
+
+    @FindBy(xpath = "//*[text()='View Cart']")
+    public WebElement viewCartButton;
+
+    @FindBy(xpath = "//h4//a")
+    public List<WebElement> productsInCart;
+
+    @FindBy(xpath = "(//td[@class='cart_price'])[1]")
+    public WebElement blueTopPriceInCart;
+
+    @FindBy(xpath = "(//td[@class='cart_price'])[2]")
+    public WebElement menTshirtPriceInCart;
+
+    @FindBy(xpath = "(//button[@class='disabled'])[1]")
+    public WebElement blueTopQuantityInCart;
+
+    @FindBy(xpath = "(//button[@class='disabled'])[2]")
+    public WebElement menTshirtQuantityInCart;
+
+    @FindBy(xpath = "(//p[@class='cart_total_price'])[1]")
+    public WebElement cartTotalPriceFirstProduct;
+
+    @FindBy(xpath = "(//p[@class='cart_total_price'])[2]")
+    public WebElement cartTotalPriceSecondProduct;
 }
