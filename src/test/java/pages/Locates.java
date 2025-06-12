@@ -225,9 +225,39 @@ public class Locates {
     @FindBy(xpath = "//button[@class='btn btn-default cart']")
     public WebElement addToCartButtonInViewProduct;
 
+    @FindBy(xpath = "//li[@class='active']")
+    public WebElement shoppingCartTextInCartPage;
 
+    @FindBy(xpath = "//a[@class='btn btn-default check_out']")
+    public WebElement proceedToCheckoutButton;
 
+    @FindBy(xpath = "//*[text()='Register / Login']")
+    public WebElement ProceedToCheckoutRegisterLoginButton;
 
+    @FindBy(xpath = "//li[@class='address_firstname address_lastname']")
+    public WebElement nameOnBill;
 
+    @FindBy(xpath = "(//li[@class='address_address1 address_address2'])[1]")
+    public WebElement componyNameOnBill;
 
+    @FindBy(xpath = "(//li[@class='address_address1 address_address2'])[2]")
+    public WebElement addressOnBill;
+
+    @FindBy(xpath = "(//li[@class='address_city address_state_name address_postcode'])[1]")
+    public WebElement stateCityZipOnBill;
+
+    @FindBy(xpath = "//li[@class='address_phone']")
+    public WebElement cellNumberOnBill;
+
+    @FindBy(xpath = "//textarea[@class='form-control']")
+    public WebElement commentAreaBeforePayment;
+
+    @FindBy(name = "name_on_card")
+    public WebElement paymentNameOnCard;
+
+    @FindBy(id = "submit")
+    public WebElement payAndConfirmOrder;
+
+    @FindBy(xpath = "(//div//p)[1]")
+    public WebElement verifySuccessOrder;
 }
