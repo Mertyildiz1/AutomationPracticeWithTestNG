@@ -208,14 +208,26 @@ public class Locates {
     public WebElement menTshirtPriceInCart;
 
     @FindBy(xpath = "(//button[@class='disabled'])[1]")
-    public WebElement blueTopQuantityInCart;
+    public WebElement firstProductQuantityInCart;
 
     @FindBy(xpath = "(//button[@class='disabled'])[2]")
-    public WebElement menTshirtQuantityInCart;
+    public WebElement secondProductQuantityInCart;
 
     @FindBy(xpath = "(//p[@class='cart_total_price'])[1]")
     public WebElement cartTotalPriceFirstProduct;
 
     @FindBy(xpath = "(//p[@class='cart_total_price'])[2]")
     public WebElement cartTotalPriceSecondProduct;
+
+    @FindBy(xpath = "//input")
+    public WebElement quantityAreaInViewProduct;
+
+    @FindBy(xpath = "//button[@class='btn btn-default cart']")
+    public WebElement addToCartButtonInViewProduct;
+
+
+
+
+
+
 }

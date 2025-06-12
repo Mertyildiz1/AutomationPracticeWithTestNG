@@ -73,10 +73,10 @@ public class C12_AddProductsInCart {
         softAssert.assertEquals(expectedMenTshirtPrice, locates.menTshirtPriceInCart.getText());
 
         String expectedBlueTopQuantity = "1";
-        softAssert.assertEquals(expectedBlueTopQuantity, locates.blueTopQuantityInCart.getText());
+        softAssert.assertEquals(expectedBlueTopQuantity, locates.firstProductQuantityInCart.getText());
 
         String expectedMenTshirtQuantity = "1";
-        softAssert.assertEquals(expectedMenTshirtQuantity, locates.menTshirtQuantityInCart.getText());
+        softAssert.assertEquals(expectedMenTshirtQuantity, locates.secondProductQuantityInCart.getText());
 
         String actualTotalPrice1 = locates.cartTotalPriceFirstProduct.getText();
         String expectedTotalPrice1 = "Rs. 500";
