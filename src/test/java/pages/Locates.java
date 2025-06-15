@@ -260,4 +260,14 @@ public class Locates {
 
     @FindBy(xpath = "(//div//p)[1]")
     public WebElement verifySuccessOrder;
+
+    @FindBy(css = ".cart_quantity_delete")
+    public WebElement xButtonInCart;
+
+    @FindBy(xpath = "//span//p")
+    public WebElement cartIsEmptyText;
+
+    @FindBy(xpath = "//tr[@class='cart_menu']")
+    public WebElement cartPageHeader;
+
 }

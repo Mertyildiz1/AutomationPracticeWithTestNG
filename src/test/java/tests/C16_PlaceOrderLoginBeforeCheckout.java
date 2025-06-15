@@ -122,7 +122,7 @@ public class C16_PlaceOrderLoginBeforeCheckout {
 
         // Add products to cart
         locates.homePageProductsButton.click();
-        actions.moveToElement(locates.firstProductMove).perform();
+        actions.moveToElement(locates.brandBıba).perform();
         js.executeScript("arguments[0].click();", locates.firstProductAddToCartButton);
 
         // Click 'Cart' button
