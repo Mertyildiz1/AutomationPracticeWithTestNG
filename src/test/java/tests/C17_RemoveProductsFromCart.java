@@ -18,7 +18,6 @@ public class C17_RemoveProductsFromCart {
     @Test
     public void test17() throws InterruptedException {
 
-        Faker faker = new Faker();
         JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
         Actions actions = new Actions(Driver.getDriver());
         Locates locates = new Locates();
