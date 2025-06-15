@@ -290,4 +290,22 @@ public class Locates {
 
     @FindBy(xpath = "//h2[@class='title text-center']")
     public WebElement menTshirtProductsTitle;
+
+    @FindBy(xpath = "//div[@class='brands_products']")
+    public WebElement brandsOnProducts;
+
+    @FindBy(xpath = "//*[text()='Polo']")
+    public WebElement brandPoloSelection;
+
+    @FindBy(xpath = "//h2[@class='title text-center']")
+    public WebElement brandPoloProductsTitle;
+
+    @FindBy(css = "div > img")
+    public List<WebElement> productSearchResults;
+
+    @FindBy(xpath = "//*[text()='H&M']")
+    public WebElement brandHMSelection;
+
+    @FindBy(xpath = "//h2[@class='title text-center']")
+    public WebElement brandHMProductsTitle;
 }
