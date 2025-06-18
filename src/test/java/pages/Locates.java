@@ -314,4 +314,17 @@ public class Locates {
 
     @FindBy(xpath = "(//*[text()='Blue Top'])[1]")
     public WebElement blueTopTextOnBanner;
+
+    @FindBy(xpath = "//a[text()='Write Your Review']")
+    public WebElement writeYourReviewText;
+
+    @FindBy(id = "name")
+    public WebElement writeYourReviewNameArea;
+
+    @FindBy(id = "button-review")
+    public WebElement writeYourReviewSubmitButton;
+
+    @FindBy(xpath = "//span[text()='Thank you for your review.']")
+    public WebElement writeYourReviewSuccessMessage;
+
 }
