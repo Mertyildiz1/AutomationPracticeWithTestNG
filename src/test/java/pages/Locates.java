@@ -327,4 +327,12 @@ public class Locates {
     @FindBy(xpath = "//span[text()='Thank you for your review.']")
     public WebElement writeYourReviewSuccessMessage;
 
+    @FindBy(xpath = "//h2[text()='recommended items']")
+    public WebElement recommendedItems;
+
+    @FindBy(xpath = "(//a[@data-product-id='1']//i[@class='fa fa-shopping-cart'])[3]")
+    public WebElement recommendedItemsBlueTopAddToCartButton;
+
+    @FindBy(xpath = "(//i[@class='fa fa-angle-right'])[2]")
+    public WebElement recommendedItemsNextPage;
 }
