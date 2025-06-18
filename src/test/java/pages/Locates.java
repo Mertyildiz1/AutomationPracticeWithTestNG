@@ -335,4 +335,11 @@ public class Locates {
 
     @FindBy(xpath = "(//i[@class='fa fa-angle-right'])[2]")
     public WebElement recommendedItemsNextPage;
+
+    @FindBy(xpath = "//*[text()='Download Invoice']")
+    public WebElement downloadInvoıceButton;
+
+    @FindBy(xpath = "//a[@class='btn btn-primary']")
+    public WebElement orderPlaceContinueButton;
+
 }
